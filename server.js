@@ -3,7 +3,9 @@ const cors = require("cors");
 const fetch = require("node-fetch");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ["https://flameburni.github.io", "http://localhost:8158"]
+}));
 app.use(express.json());
 
 app.post("/suggest", async function(req, res) {
